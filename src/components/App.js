@@ -8,8 +8,8 @@ class App extends React.Component {
   componentDidMount = async () => {
     // Fetching movies that are currently being played in particular cinema
     const response = await moviesAPI.get("/v4/movies/", {
-      // ID for Cinema City in Arkadia shopping mall, Warsaw
-      params: { cinema_id: 64777 }
+      // ID for Multikino Ursynów, Warsaw
+      params: { cinema_id: 64996 }
     });
     this.setState({ movies: response.data.movies });
   };
@@ -17,7 +17,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="ui container">
-        <h1>Currently playing in Cinema City Arkadia, Warsaw</h1>
+        <h1>Currently playing in Multikino Ursynów, Warsaw</h1>
         <MovieList movies={this.state.movies} />
       </div>
     );
