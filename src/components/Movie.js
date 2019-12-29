@@ -1,6 +1,8 @@
 import React from "react";
 import moviesAPI from "../api/movies-api";
 import { Link } from "react-router-dom";
+import Seating from "./Seating";
+
 class Movie extends React.Component {
   state = { movie: [] };
 
@@ -12,6 +14,10 @@ class Movie extends React.Component {
     const response = await moviesAPI.get(`/v4/movies/${params.id}`, {});
     this.setState({ movie: response.data.movie });
   };
+
+  renderSeating() {
+    return <Seating />;
+  }
 
   render() {
     return (
@@ -41,10 +47,14 @@ class Movie extends React.Component {
             </a>
           </div>
           <div className="extra">
-            <div className="ui right floated primary button">
-              Buy tickets
-              <i className="right chevron icon"></i>
-            </div>
+            <Link to={`/seating`}>
+              <button
+                className="ui right floated primary button"
+                onClick={this.renderSeating}
+              >
+                Buy tickets
+              </button>
+            </Link>
           </div>
         </div>
       </div>

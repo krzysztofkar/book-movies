@@ -1,5 +1,6 @@
 import React from "react";
 import Movie from "./Movie";
+import Seating from "./Seating";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const MovieList = props => {
@@ -21,6 +22,7 @@ const MovieList = props => {
     <Router>
       <Switch>
         <Route path="/movies/:id" component={Movie} />
+        <Route path="/seating" component={Seating} />
         <Route path="/">
           <div className="ui cards">{movies}</div>
         </Route>
