@@ -1,0 +1,23 @@
+.ui .cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: transparent;
+}
+
+.movie-poster {
+    width: 100%;
+    max-height: 350px;
+    box-shadow: 7px 8px 32px 0px rgba(115,114,115,1);
+    overflow: hidden;
+    position: relative;
+
+}
+
+.movie-poster:hover {
+    opacity: 0.95;
+}
+
+  .content {
+      padding: 5px 10px;
+  }

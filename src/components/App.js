@@ -1,6 +1,9 @@
 import React from "react";
 import MovieList from "./MovieList";
 import moviesAPI from "../api/movies-api";
+import './App.css';
+
+
 
 class App extends React.Component {
   state = { movies: [] };
@@ -16,9 +19,22 @@ class App extends React.Component {
 
   render() {
     return (
+      <div>
+      <div className="main-header">
+        <h1>Multikino Ursynów</h1>
+        </div>
       <div className="ui container">
-        <h1>Currently playing in Multikino Ursynów, Warsaw</h1>
         <MovieList movies={this.state.movies} />
+        </div>
+        <footer>
+          <div className="contact-wrapper">
+            <div className="contact-header">Contact</div>
+            <p>Adress: Nowy świat 55</p>
+            <p>City: Warsaw</p>
+            <p>Telephone: 000-000-000</p>
+          </div>
+          <div className="copyright-text">© All rights reserved</div>
+        </footer>
       </div>
     );
   }
