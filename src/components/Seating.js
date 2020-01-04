@@ -3,19 +3,10 @@ import { Link } from "react-router-dom";
 import Seat from './Seat';
 
 class Seating extends Component {
-  state = { chosen: false };
-
-  toggleChoose = () => {
-    const currentState = this.state.chosen;
-    this.setState({ chosen: !currentState });
-  };
-
   render() {
     var rows = [];
     for (var i = 1; i <= 30; i++) {
     rows.push(<Seat
-    onclick={this.toggleChoose}
-    style={{backgroundColor: this.state.chosen ? "rgb(0, 128, 192)" : "rgb(122, 122, 122)"}}
     number={i}
     ></Seat>);
   }
