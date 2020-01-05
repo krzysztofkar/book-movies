@@ -9,6 +9,8 @@ class Seating extends Component {
 
   handleSubmit = () => {
     console.log(this.state);
+    const chosenSeatsIDsArray = this.state.seats;
+    const movieID = this.props.match.params.id;
     return this.state;
   };
 
