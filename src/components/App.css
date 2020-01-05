@@ -1,0 +1,46 @@
+body {
+    background-image: url(./img/stardust.png);
+    background-attachment: fixed;
+}
+
+.main-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    background-color: rgba(27, 26, 26, 0.8);
+    border-bottom: 1px solid rgba(34, 34, 34, 0.9);
+    margin-bottom: 3rem;
+    box-shadow: 0 0 25px 0 rgb(32, 29, 29);
+
+
+}
+h1 {
+    color: rgb(152, 175, 169);
+}
+
+footer {
+    background-color: rgba(36, 35, 35, 0.8);
+    color: rgb(152, 175, 169);
+    margin-top: 6rem;
+    height: 15rem;
+    border-top: 1px solid rgba(88, 86, 86, 0.9);
+}
+
+.contact-wrapper {
+    margin-left: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-header {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.copyright-text {
+    border-top: 1px solid rgba(88, 86, 86, 0.8);
+    margin: 1rem 1rem;
+    padding-left: 2rem;
+    padding-top: 0.5rem;
+}

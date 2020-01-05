@@ -2,6 +2,7 @@ import React from "react";
 import moviesAPI from "../api/movies-api";
 import { Link } from "react-router-dom";
 import Seating from "./Seating";
+import './Movie.css';
 
 class Movie extends React.Component {
   state = { movie: [] };
@@ -25,7 +26,7 @@ class Movie extends React.Component {
         <Link to={`/`}>
           <button className="ui button"> Go back to movies </button>
         </Link>
-        <div className="item" style={{ maxWidth: "60%" }}>
+        <div className="item">
           <div className="image">
             <img
               alt="movie-poster"
@@ -33,16 +34,16 @@ class Movie extends React.Component {
             />
           </div>
           <div className="content">
-            <h4 className="header">{this.state.movie.title}</h4>
-            <div className="meta">
+            <h4 className="header" style={{ color: "#f4f4f4" }} >{this.state.movie.title}</h4>
+            <div className="meta" style={{ color: "#f4f4f4" }}>
               <span className="cinema">{this.state.movie.runtime} minutes</span>
             </div>
             <hr />
             <div className="description">
-              <p>{this.state.movie.synopsis}</p>
+              <p className="description-text">{this.state.movie.synopsis}</p>
               <br />
             </div>
-            <a href={this.state.movie.website} target="_blank">
+            <a className="moreLink" href={this.state.movie.website} target="blank">
               More info
             </a>
           </div>
@@ -52,7 +53,7 @@ class Movie extends React.Component {
                 className="ui right floated primary button"
                 onClick={this.renderSeating}
               >
-                Buy tickets
+                Book ticket
               </button>
             </Link>
           </div>

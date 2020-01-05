@@ -1,0 +1,39 @@
+.description-text {
+    color: rgb(102, 196, 172);
+}
+.header {
+    color: rgb(244, 244, 244);
+    padding-bottom: 1rem;
+}
+
+.ui .items {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.ui .button {
+    font-size: 0.8rem;
+    background-color: rgb(65, 131, 196);
+    color: rgb(244, 244, 244);
+}
+
+.image {
+    box-shadow: 7px 8px 32px 0px rgba(0, 0, 0, 0.8);
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 767px) {
+    .image {
+        box-shadow: 3px 8px 18px 0px rgba(0, 0, 0, 0);
+    }
+    .ui .button {
+        font-size: 1rem;
+        margin-left: 0;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .ui .button {
+        font-size: 1rem;
+        margin-left: 0;
+    }
+  }
