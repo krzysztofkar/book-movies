@@ -1,17 +1,27 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Seat from "./Seat";
+import axios from "axios";
 
 class Seating extends Component {
   state = {
-    seats: []
+    seats: [],
+    rows: []
   };
 
-  handleSubmit = () => {
-    console.log(this.state);
+  handleSubmit = e => {
+    e.preventDefault();
     const chosenSeatsIDsArray = this.state.seats;
     const movieID = this.props.match.params.id;
-    return this.state;
+    axios
+      .put(`http://localhost:5000/movies/${movieID}/seating`, {
+        seats: chosenSeatsIDsArray,
+        movieID: movieID
+      })
+      .then(res => res.data);
+    alert("Tickets booked successfully!");
+
+    return this.state.seats;
   };
 
   handleChange = e => {
@@ -34,12 +44,16 @@ class Seating extends Component {
 
   render() {
     var rows = [];
-    for (var i = 1; i <= 30; i++) {
+    axios
+      .get(`http://localhost:5000/movies/${this.props.match.params.id}/seating`)
+      .then(res => this.setState({ rows: res.data }));
+    for (let seat of this.state.rows) {
       rows.push(
         <Seat
-          number={i}
-          key={i}
+          number={seat.number}
+          key={seat.number}
           handleSelectSeat={this.handleSelectSeat}
+          isTaken={seat.isTaken}
         ></Seat>
       );
     }
